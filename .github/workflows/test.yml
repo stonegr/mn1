@@ -13,19 +13,19 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - name: Initialization environment
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        sudo mkdir -p /mnt/workdir
-        sudo chown $USER:$GROUPS /mnt/workdir
+    # - name: Initialization environment
+    #   env:
+    #     DEBIAN_FRONTEND: noninteractive
+    #   run: |
+    #     sudo mkdir -p /mnt/workdir
+    #     sudo chown $USER:$GROUPS /mnt/workdir
 
-    - name: Clone source code
-      working-directory: /mnt/workdir
-      run: |
-        df -hT $PWD
-        git clone https://github.com/coolsnowwolf/lede -b master openwrt
-        ln -sf /mnt/workdir/openwrt $GITHUB_WORKSPACE/openwrt
+    # - name: Clone source code
+    #   working-directory: /mnt/workdir
+    #   run: |
+    #     df -hT $PWD
+    #     git clone https://github.com/coolsnowwolf/lede -b master openwrt
+    #     ln -sf /mnt/workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
