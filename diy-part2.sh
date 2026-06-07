@@ -12,3 +12,6 @@ sed -i 's/LEDE/Stone/g' package/base-files/files/bin/config_generate
 sed -i '/OPENSSL_TARGET:=linux-$(call qstrip,$(CONFIG_ARCH))-openwrt/i \
 OPENSSL_OPTIONS += enable-asm\
 OPENSSL_OPTIONS += -march=armv8-a+crypto\n' package/libs/openssl/Makefile
+
+# set linux kernal
+sed -i 's/6.6/6.1/g' /target/linux/amlogic
